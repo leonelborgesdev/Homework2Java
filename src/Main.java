@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) {
         // Crear array de productos
         Producto[] productos = new Producto[] {
-                new Producto("Producto 1", 50.0, 1),
+                new Producto("Producto 1", 5.0, 1),
                 new Producto("Producto 2", 25.0, 2),
                 new Producto("Producto 3", 150.0, 3),
                 new Producto("Descartable 1", 5.0, 4),
@@ -25,15 +25,18 @@ public class Main {
         for (Producto producto: productos){
             System.out.println(producto);
         };
-        System.out.println("\nProductos que cumplen con el filtro 'Vendible':");
+
         Filtrable vendibleFiltro=new Vendible();
+        System.out.println("\nProductos con precio mayor a Cero");
         filtrarProducttos(productos, vendibleFiltro);
 
-        System.out.println("\nProductos que cumplen con el filtro 'Descartable:'");
+
+        System.out.println("\nProductos Descartables");
         Filtrable descartableFiltro = new Descartable();
         filtrarProducttos(productos, descartableFiltro);
 
-        System.out.println("\nProductos que cumplen con el filtro 'Imperecedero'");
+
+        System.out.println("\nProductos con precio mayor a Cien");
         Filtrable imperecedroFiltro= new Imperecedero();
         filtrarProducttos(productos, imperecedroFiltro);
     }
