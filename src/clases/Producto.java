@@ -1,6 +1,6 @@
 package clases;
 
-public class Producto {
+public class Producto implements Comparable<Producto> {
     private String nombre;
     private double precio;
     private int codigo;
@@ -33,5 +33,19 @@ public class Producto {
 
     public void setCodigo(int codigo) {
         this.codigo = codigo;
+    }
+
+    @Override
+    public int compareTo(Producto o) {
+        return Double.compare(this.precio, o.precio);
+    }
+
+    @Override
+    public String toString() {
+        return "Producto{" +
+                "nombre='" + nombre + '\'' +
+                ", precio=" + precio +
+                ", codigo=" + codigo +
+                '}';
     }
 }
